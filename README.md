@@ -140,3 +140,7 @@ Calendar API to fetch upcoming events in specific cities.
 - When the user selects to view a chart of upcoming events by city;
 
 - Then the app should display a chart showing the number of upcoming events for each city.
+
+### Serverless Functions
+
+AWS Lambda will be used as the cloud-service provider. By using a serverless function, the Meet app will be able to managae authorization for accessing public calendar events using the Google Calendar API. Users must be authenticated to access events, which will be streamlined through the serverless function. This offers a more resource-efficient solution when compared to traditional server infrastructure.
