@@ -1,11 +1,16 @@
 // src/components/CitySearch.js
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-const CitySearch = ({ allLocations }) => {
+const CitySearch = ({ allLocations, setCurrentCity }) => {
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [query, setQuery] = useState("");
   const [suggestions, setSuggestions] = useState([]);
+
+  //set Hook to initialize state suggestion to have default value as the same array as its allLocations prop.
+  useEffect(() => {
+    setSuggestions(allLocations)
+  }, [`${allLocations}`]);
 
   const handleInputChanged = (event) => {
     const value = event.target.value;
@@ -21,7 +26,10 @@ const handleItemClicked = (event) => {
   const value = event.target.textContent;
   setQuery(value);
   setShowSuggestions(false); // to hide the list
+  setCurrentCity(value);
 };
+
+
   
   return (
     <div id="city-search">
