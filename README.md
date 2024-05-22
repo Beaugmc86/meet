@@ -63,45 +63,52 @@ Calendar API to fetch upcoming events in specific cities.
 
 **Scenario 1:** An event element is collapsed by default.
 
-- Given the events app is open;
+- Given the user have just opened the app;
 
 - When the user views the list of events;
 
-- Then each event element should be collapsed.
+- Then all events details should be hidden.
 
 **Scenario 2:** User can expand an event to see details.
 
-- Given user has decided to click on an event to see more details;
+- Given the user have just opened the app;
 
-- When user clicks on a button or card;
+- When the user clicks on the details button of one of the events;
 
-- Then the user should see more details of the event.
+- Then the event's details should be shown;
+
+- And the event's details button title will be adjusted to (hide details).
 
 **Scenario 3:** User can collapse an event to hide details.
 
-- Given the user is viewing the expanded details of an event;
+- Given the event's details are shown;
 
-- When the user selects to collapse the event;
+- And the event's Details button title is (hide details);
 
-- Then the event details should be hidden.
+- When the user clicks on Details button of that event;
+- Then the event's details should be hidden;
+
+- And the event's Details button title will be adjusted to (show details)
 
 ### Feature 3: Specify Number of Events
 
 **Scenario 1:** When user hasn’t specified a number, 32 events are shown by default.
 
-- Given the events app is open;
+- Given the user have just opened the app;
+- And the user Haven't changed the number of events;
 
-- When the user views the list of events;
+- When the user views the events list;
 
-- Then the user should see 32 events displayed.
+- Then the Number Of Events input field should display 32 by default;
+
+- And the number of events in the list should be 32 by default.
 
 **Scenario 2:** User can change the number of events displayed.
 
-- Given the user is viewing the list of events;
+- Given the user have just opened the app;
+- When the user changes the value of Number Of Events input field;
 
-- When the user specifies a new number of events to display;
-
-- Then the list of events should update to show the specified number.
+- Then the number of events in the list will change accordingly.
 
 ### Feature 4: Use App When Offline
 
