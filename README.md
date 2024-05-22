@@ -33,7 +33,7 @@ Calendar API to fetch upcoming events in specific cities.
 
 ## Features & Scenarios
 
-### Feature 1: Filter by City
+### Feature 1: Filter Events by City
 
 **Scenario 1:** When user hasn’t searched for a specific city, show upcoming events from all cities.
 
