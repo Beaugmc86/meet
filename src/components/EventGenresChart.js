@@ -1,7 +1,7 @@
 // src/components/EventGenresChart.js
 
 import { useState, useEffect } from 'react';
-import { ResponsiveContainer, PieChart, Pie } from 'recharts';
+import { ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
 
 const EventGenresChart=({ events }) => {
 
@@ -20,7 +20,7 @@ const EventGenresChart=({ events }) => {
           name: genre,
           value: filteredEvents.length
         }
-      })
+      });
       return data;
     }
 
@@ -43,19 +43,23 @@ const EventGenresChart=({ events }) => {
     };
 
   return (
-   <ResponsiveContainer width="99%" height={400}>
-     <PieChart>
-       <Pie
-         data={data}
-         dataKey="value"
-         fill="#8884d8"
-         labelLine={false}
-         label={renderCustomizedLabel}
-         outerRadius={150}           
-       />
-     </PieChart>
-   </ResponsiveContainer>
- );
-}
+    <ResponsiveContainer width="99%" height={400}>
+      <PieChart>
+        <Pie
+          data={data}
+          dataKey="value"
+          fill="#8884d8"
+          labelLine={false}
+          label={renderCustomizedLabel}
+          outerRadius={150}           
+        >
+          {data.map((entry, index) => (
+            <Cell key={`cell-${index}`} fill={colors[index]}/>
+          ))}
+        </Pie>
+      </PieChart>
+    </ResponsiveContainer>
+  );
+};
 
 export default EventGenresChart;
