@@ -2,6 +2,7 @@
 .App {
   text-align: center;
   padding: 2% 5%;
+  background-color: rgb(231, 225, 225);
 }
 
 .App * {
@@ -72,7 +73,7 @@ input[type="number"] {
   padding: 10px 10px 35px;
   margin-bottom: 10px;
   text-align: left;
-  border: 1px solid #ccc;
+  border: 1px solid rgba(128, 128, 128, 0.438);
   border-radius: 4px;
   position: relative;
 }
@@ -85,6 +86,7 @@ input[type="number"] {
   border-radius: 4px;
   outline: none;
   cursor: pointer;
+  background-color: darkgray;
 }
 
 .alerts-container {
@@ -98,6 +100,8 @@ input[type="number"] {
 .charts-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  border: 1px solid rgba(128, 128, 128, 0.438);
+  border-radius: 5px;
 }
 
 @media (max-width: 768px) {
